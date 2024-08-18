@@ -15,50 +15,54 @@ graph LR
   end
   subgraph Graph
     direction LR
-    x0f09e4c17eb3276c(["test_metrics"]):::outdated --> xae90e4e03e9da6f6(["write_test"]):::outdated
-    x3045fd98bf132297(["lightgbm_tuned"]):::outdated --> xcc98cb49ce297ec1(["lightgbm_results"]):::outdated
     x9b0c9170b8902027(["best_model"]):::outdated --> x29f339361487eb61(["final_model"]):::outdated
     xe28457b7180d9865(["split"]):::outdated --> x29f339361487eb61(["final_model"]):::outdated
     x0f09e4c17eb3276c(["test_metrics"]):::outdated --> x29f339361487eb61(["final_model"]):::outdated
-    x9774927add83534a(["full_data"]):::outdated --> xe28457b7180d9865(["split"]):::outdated
-    xfa066c31cda349b9(["baseline_results"]):::outdated --> xe0bb173f910bd7f0(["valid_metrics"]):::outdated
-    xe2705333dfe7c9b4(["glmnet_results"]):::outdated --> xe0bb173f910bd7f0(["valid_metrics"]):::outdated
-    xcc98cb49ce297ec1(["lightgbm_results"]):::outdated --> xe0bb173f910bd7f0(["valid_metrics"]):::outdated
-    x9b0c9170b8902027(["best_model"]):::outdated --> x4cdedcb3a02ef6bb(["test_preds"]):::outdated
-    xbb782543df7528d1(["test_data"]):::outdated --> x4cdedcb3a02ef6bb(["test_preds"]):::outdated
-    xf4454ed4827f39ab(["flights_recipe"]):::outdated --> xf06d6eef7829004f(["glmnet_wflow"]):::outdated
-    xe7c688145125e4e7(["glmnet_mod"]):::outdated --> xf06d6eef7829004f(["glmnet_wflow"]):::outdated
-    xf4454ed4827f39ab(["flights_recipe"]):::outdated --> xad2d2a7a16304874(["lightgbm_wflow"]):::outdated
-    xec3a6239d23d9fb4(["lightgbm_mod"]):::outdated --> xad2d2a7a16304874(["lightgbm_wflow"]):::outdated
-    x50558fc6e6286095(["train_data"]):::outdated --> xf4454ed4827f39ab(["flights_recipe"]):::outdated
-    x849d840ef22b54a9(["weather"]):::outdated --> x9fde742fe0a2565f(["weather_prepared"]):::outdated
-    x1bddabfef734c169(["my_metrics"]):::outdated --> x0f09e4c17eb3276c(["test_metrics"]):::outdated
-    x4cdedcb3a02ef6bb(["test_preds"]):::outdated --> x0f09e4c17eb3276c(["test_metrics"]):::outdated
-    xad2d2a7a16304874(["lightgbm_wflow"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
-    xed83340f200a6764(["my_ctrl"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
-    x1bddabfef734c169(["my_metrics"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
-    xe28457b7180d9865(["split"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
-    x3045fd98bf132297(["lightgbm_tuned"]):::outdated --> x9b0c9170b8902027(["best_model"]):::outdated
+    xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated --> xe2705333dfe7c9b4(["glmnet_results"]):::outdated
+    xe28457b7180d9865(["split"]):::outdated --> xd2cb6929a158530b(["plot_split"]):::outdated
     x0d6375e58e5b207c(["baseline_wflow"]):::outdated --> x633d349f0c4d35f8(["baseline_tuned"]):::outdated
     xed83340f200a6764(["my_ctrl"]):::outdated --> x633d349f0c4d35f8(["baseline_tuned"]):::outdated
     x1bddabfef734c169(["my_metrics"]):::outdated --> x633d349f0c4d35f8(["baseline_tuned"]):::outdated
     xe28457b7180d9865(["split"]):::outdated --> x633d349f0c4d35f8(["baseline_tuned"]):::outdated
-    x50558fc6e6286095(["train_data"]):::outdated --> xd0e10a259837a1c5(["plot_missing"]):::outdated
-    x50558fc6e6286095(["train_data"]):::outdated --> x0d6375e58e5b207c(["baseline_wflow"]):::outdated
-    xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated --> xe2705333dfe7c9b4(["glmnet_results"]):::outdated
-    xe28457b7180d9865(["split"]):::outdated --> xd2cb6929a158530b(["plot_split"]):::outdated
-    xe0bb173f910bd7f0(["valid_metrics"]):::outdated --> xbc2f8d07f8113aa5(["write_metrics"]):::outdated
     x1ecdaec783393d35(["glmnet_grid"]):::outdated --> xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated
     xf06d6eef7829004f(["glmnet_wflow"]):::outdated --> xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated
     xed83340f200a6764(["my_ctrl"]):::outdated --> xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated
     x1bddabfef734c169(["my_metrics"]):::outdated --> xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated
     xe28457b7180d9865(["split"]):::outdated --> xf7b68bfa4f5b3a26(["glmnet_tuned"]):::outdated
+    xad2d2a7a16304874(["lightgbm_wflow"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
+    xed83340f200a6764(["my_ctrl"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
+    x1bddabfef734c169(["my_metrics"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
+    xe28457b7180d9865(["split"]):::outdated --> x3045fd98bf132297(["lightgbm_tuned"]):::outdated
+    x9774927add83534a(["full_data"]):::outdated --> xe28457b7180d9865(["split"]):::outdated
+    x50558fc6e6286095(["train_data"]):::outdated --> x0d6375e58e5b207c(["baseline_wflow"]):::outdated
+    xe28457b7180d9865(["split"]):::outdated --> x50558fc6e6286095(["train_data"]):::outdated
+    x0f09e4c17eb3276c(["test_metrics"]):::outdated --> xae90e4e03e9da6f6(["write_test"]):::outdated
+    x3045fd98bf132297(["lightgbm_tuned"]):::outdated --> x9b0c9170b8902027(["best_model"]):::outdated
+    xf4454ed4827f39ab(["flights_recipe"]):::outdated --> xad2d2a7a16304874(["lightgbm_wflow"]):::outdated
+    xec3a6239d23d9fb4(["lightgbm_mod"]):::outdated --> xad2d2a7a16304874(["lightgbm_wflow"]):::outdated
+    x3045fd98bf132297(["lightgbm_tuned"]):::outdated --> xcc98cb49ce297ec1(["lightgbm_results"]):::outdated
+    x29f339361487eb61(["final_model"]):::outdated --> x49a9fc81583844b3(["model_pin"]):::outdated
+    xc24813344827e171(["model_board"]):::outdated --> x49a9fc81583844b3(["model_pin"]):::outdated
+    xf4454ed4827f39ab(["flights_recipe"]):::outdated --> xf06d6eef7829004f(["glmnet_wflow"]):::outdated
+    xe7c688145125e4e7(["glmnet_mod"]):::outdated --> xf06d6eef7829004f(["glmnet_wflow"]):::outdated
+    x50558fc6e6286095(["train_data"]):::outdated --> xf4454ed4827f39ab(["flights_recipe"]):::outdated
+    x1bddabfef734c169(["my_metrics"]):::outdated --> x0f09e4c17eb3276c(["test_metrics"]):::outdated
+    x4cdedcb3a02ef6bb(["test_preds"]):::outdated --> x0f09e4c17eb3276c(["test_metrics"]):::outdated
+    xc24813344827e171(["model_board"]):::outdated --> xb72891f20a5b8df1(["report"]):::outdated
+    x49a9fc81583844b3(["model_pin"]):::outdated --> xb72891f20a5b8df1(["report"]):::outdated
+    x9b0c9170b8902027(["best_model"]):::outdated --> x4cdedcb3a02ef6bb(["test_preds"]):::outdated
+    xbb782543df7528d1(["test_data"]):::outdated --> x4cdedcb3a02ef6bb(["test_preds"]):::outdated
+    x633d349f0c4d35f8(["baseline_tuned"]):::outdated --> xfa066c31cda349b9(["baseline_results"]):::outdated
+    x50558fc6e6286095(["train_data"]):::outdated --> xd0e10a259837a1c5(["plot_missing"]):::outdated
     x0b21886200383afb(["flights"]):::outdated --> xa53022e1b3b7315a(["flights_prepared"]):::outdated
+    xe0bb173f910bd7f0(["valid_metrics"]):::outdated --> xbc2f8d07f8113aa5(["write_metrics"]):::outdated
+    x849d840ef22b54a9(["weather"]):::outdated --> x9fde742fe0a2565f(["weather_prepared"]):::outdated
+    xfa066c31cda349b9(["baseline_results"]):::outdated --> xe0bb173f910bd7f0(["valid_metrics"]):::outdated
+    xe2705333dfe7c9b4(["glmnet_results"]):::outdated --> xe0bb173f910bd7f0(["valid_metrics"]):::outdated
+    xcc98cb49ce297ec1(["lightgbm_results"]):::outdated --> xe0bb173f910bd7f0(["valid_metrics"]):::outdated
     xa53022e1b3b7315a(["flights_prepared"]):::outdated --> x9774927add83534a(["full_data"]):::outdated
     x9fde742fe0a2565f(["weather_prepared"]):::outdated --> x9774927add83534a(["full_data"]):::outdated
     xe28457b7180d9865(["split"]):::outdated --> xbb782543df7528d1(["test_data"]):::outdated
-    x633d349f0c4d35f8(["baseline_tuned"]):::outdated --> xfa066c31cda349b9(["baseline_results"]):::outdated
-    xe28457b7180d9865(["split"]):::outdated --> x50558fc6e6286095(["train_data"]):::outdated
   end
   classDef outdated stroke:#000000,color:#000000,fill:#78B7C5;
   classDef none stroke:#000000,color:#000000,fill:#94a4ac;
@@ -78,7 +82,7 @@ valid_metrics |>
     gt::as_raw_html()
 ```
 
-<div id="oztyqfvgwd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="oepcwkvcoh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   &#10;  
 
 | wflow_id | .estimator | n | std_err | .config | penalty | mixture | trees | min_n | tree_depth | mn_log_loss | pr_auc | roc_auc |
@@ -132,7 +136,7 @@ test_metrics |>
     gt::as_raw_html()
 ```
 
-<div id="pusnpxtdmm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="oyaosjuxxb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   &#10;  
 
 | .estimator | roc_auc | pr_auc | mn_log_loss |

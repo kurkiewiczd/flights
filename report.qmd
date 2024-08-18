@@ -1,0 +1,75 @@
+---
+title: "Model Report"
+format: gfm
+editor: source
+---
+
+# Pipeline
+
+```{r}
+#| message: false
+#| warning: false
+# packages
+library(targets)
+library(dplyr)
+library(purrr)
+library(tidymodels)
+library(vetiver)
+
+# load in src code used in pipeline
+targets::tar_load("src")
+
+# load in targets needed from run
+tar_load(model_board)
+tar_load(model_pin)
+
+# set ggplot theme
+ggplot2::theme_set(ggplot2::theme_light())
+
+```
+
+
+## Model
+
+Examine the model that was produced by the model run.
+
+```{r}
+
+# view model pin
+model_pin
+
+```
+
+View the vetiver object
+
+```{r}
+
+# load model from model board
+v = 
+    vetiver::vetiver_pin_read(board = model_board,
+                              name = model_pin$name,
+                              version = model_pin$version)
+
+v
+
+```
+
+Examine metrics stored with the model
+
+```{r}
+
+v$metadata$user$metrics |>
+    bind_cols()
+
+```
+
+Examine variable importance
+
+```{r}
+
+v |> 
+    pluck("model") |> 
+    bundle::unbundle() |> 
+    extract_fit_engine() |>
+    vip::vip()
+```

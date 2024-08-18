@@ -59,3 +59,27 @@ pivot_metrics = function(data, values = c('mean', '.estimate')) {
     values_from = any_of(values)
   )
 }
+
+pin_model = function(model,
+                     board,
+                     check_renv = T) {
+
+    model |>
+        vetiver::vetiver_pin_write(
+            board = board,
+            check_renv = check_renv
+        )
+
+    meta =
+        pins::pin_meta(
+            board = board,
+            name = model$model_name
+        )
+
+    # return id of model
+    tibble(
+        hash = meta$pin_hash,
+        name = model$model_name,
+        version = meta$local$version
+    )
+}
