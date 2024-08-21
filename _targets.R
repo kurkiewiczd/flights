@@ -68,5 +68,21 @@ list(
     test_data,
     split |>
       testing()
+  ),
+
+
+  tar_target(
+    baseline_wflow,
+    workflow() |>
+      add_model(
+        logistic_reg()
+      ) |>
+      add_recipe(
+        recipe(
+          arr_delay ~ air_time + distance,
+          data = train_data
+        ) |>
+          step_impute_median(all_numeric_predictors())
+      )
   )
 )
